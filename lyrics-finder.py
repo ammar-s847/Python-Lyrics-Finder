@@ -16,6 +16,7 @@ def getLyrics(link):
     lyrics = htmlCode[startIndex : htmlCode.index("</div>", startIndex)]
     lyrics = lyrics.replace("<!-- Usage of azlyrics.com content by any third-party lyrics provider is prohibited by our licensing agreement. Sorry about that. -->", "")
     lyrics = lyrics.replace("&quot;", "\"")
+    lyrics = lyrics.replace("<i>", "").replace("</i>", "")
     return lyrics.replace("<br><br>", "\n").replace("<br>", "\n")
 
 song = input("Enter a Song name and optionally, the Artist name: ")
